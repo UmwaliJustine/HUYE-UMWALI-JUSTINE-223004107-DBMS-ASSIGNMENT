@@ -1,0 +1,215 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database ruhande;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use ruhande;
+Database changed
+mysql> create table ngoma;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table ngoma(ID INT(10),F_ NAME CHAR(10),LNAME CHAR(10),GENDER CHAR(3),PROVINCE CHAR(10),DISTRICT CHAR(10),SECTOR CHAR(10),CELL CHAR(10),EMAIL CHAR(20),TEL CHAR(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NAME CHAR(10),LNAME CHAR(10),GENDER CHAR(3),PROVINCE CHAR(10),DISTRICT CHAR(10),' at line 1
+mysql> create table ngoma(ID INT(10),FNAME CHAR(10),LNAME CHAR(10),GENDER CHAR(3),PROVINCE CHAR(10),DISTRICT CHAR(10),SECTOR CHAR(10),CELL CHAR(10),EMAIL CHAR(20),TEL CHAR(10));
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> INSERT INTO NGOMA VALUES('1234567','UMWALI','JUSTINE','F','SOUTH','HUYE','KABEZA','KIZUNGU','umwalijustine37@gmail.com','0799325151');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('2234567','IRAKARAMA','GISELEE','F','NORTH','MUSANZE','KINIGI','RANGO','iragizzo7@gmail.com','0780059152');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('33234567','ROSE','MARIE','F','WEST','NYABIHU','KABAYA','KIMISAGARA','marierose7@gmail.com','0780054552');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('43234567','IRIHO','JUSTIN','M','EAST','NGOMA','BYANGABO','KABEZA','justin7@gmail.com','0780054562');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('53234567','IRAKOZE','JOHNSON','M','WEST','RWAMAGANA','GASEKE','TUMBAA','johnson7@gmail.com','0780057862');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('63234567','IZERE','LAISSA','F','WEST','RUBAVU','RAMBURA','JOMBA','laissan7@gmail.com','0786557862');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('73234567','UMWALI','CELINE','F','WEST','RUSIZI','RWESERO','TABA','celine7@gmail.com','0796957862');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('83234567','MUGISHA','EUGENIE','F','NORTH','BURERA','KIDAHO','MUGU','eugeniee7@gmail.com','0796900862');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('93234567','ISHIMWE','MERCI','F','KIGALI','GASABO','NYAMATA','GATSATA','merciee7@gmail.com','0796900062');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('10234567','TUYIZERE','JAMES','M','SOUTH','NYANZA','KABEZA','BASE','jamees7@gmail.com','0721900062');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from ngoma;
++----------+-----------+---------+--------+----------+-----------+----------+------------+----------------------+------------+
+| ID       | FNAME     | LNAME   | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL       | EMAIL                | TEL        |
++----------+-----------+---------+--------+----------+-----------+----------+------------+----------------------+------------+
+|  1234567 | UMWALI    | JUSTINE | F      | SOUTH    | HUYE      | KABEZA   | KIZUNGU    | umwalijustine37@gmai | 0799325151 |
+|  2234567 | IRAKARAMA | GISELEE | F      | NORTH    | MUSANZE   | KINIGI   | RANGO      | iragizzo7@gmail.com  | 0780059152 |
+| 33234567 | ROSE      | MARIE   | F      | WEST     | NYABIHU   | KABAYA   | KIMISAGARA | marierose7@gmail.com | 0780054552 |
+| 43234567 | IRIHO     | JUSTIN  | M      | EAST     | NGOMA     | BYANGABO | KABEZA     | justin7@gmail.com    | 0780054562 |
+| 53234567 | IRAKOZE   | JOHNSON | M      | WEST     | RWAMAGANA | GASEKE   | TUMBAA     | johnson7@gmail.com   | 0780057862 |
+| 63234567 | IZERE     | LAISSA  | F      | WEST     | RUBAVU    | RAMBURA  | JOMBA      | laissan7@gmail.com   | 0786557862 |
+| 73234567 | UMWALI    | CELINE  | F      | WEST     | RUSIZI    | RWESERO  | TABA       | celine7@gmail.com    | 0796957862 |
+| 83234567 | MUGISHA   | EUGENIE | F      | NORTH    | BURERA    | KIDAHO   | MUGU       | eugeniee7@gmail.com  | 0796900862 |
+| 93234567 | ISHIMWE   | MERCI   | F      | KIGALI   | GASABO    | NYAMATA  | GATSATA    | merciee7@gmail.com   | 0796900062 |
+| 10234567 | TUYIZERE  | JAMES   | M      | SOUTH    | NYANZA    | KABEZA   | BASE       | jamees7@gmail.com    | 0721900062 |
++----------+-----------+---------+--------+----------+-----------+----------+------------+----------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> alter table ngoma add MARTUAL-STATUS(10);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-STATUS(10)' at line 1
+mysql> alter table ngoma add MARTUAL_STATUS(10);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(10)' at line 1
+mysql> alter table ngoma add status(10);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(10)' at line 1
+mysql> alter table ngoma add status char(10);
+Query OK, 10 rows affected (0.02 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select *from ngoma;
++----------+-----------+---------+--------+----------+-----------+----------+------------+----------------------+------------+--------+
+| ID       | FNAME     | LNAME   | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL       | EMAIL                | TEL        | status |
++----------+-----------+---------+--------+----------+-----------+----------+------------+----------------------+------------+--------+
+|  1234567 | UMWALI    | JUSTINE | F      | SOUTH    | HUYE      | KABEZA   | KIZUNGU    | umwalijustine37@gmai | 0799325151 | NULL   |
+|  2234567 | IRAKARAMA | GISELEE | F      | NORTH    | MUSANZE   | KINIGI   | RANGO      | iragizzo7@gmail.com  | 0780059152 | NULL   |
+| 33234567 | ROSE      | MARIE   | F      | WEST     | NYABIHU   | KABAYA   | KIMISAGARA | marierose7@gmail.com | 0780054552 | NULL   |
+| 43234567 | IRIHO     | JUSTIN  | M      | EAST     | NGOMA     | BYANGABO | KABEZA     | justin7@gmail.com    | 0780054562 | NULL   |
+| 53234567 | IRAKOZE   | JOHNSON | M      | WEST     | RWAMAGANA | GASEKE   | TUMBAA     | johnson7@gmail.com   | 0780057862 | NULL   |
+| 63234567 | IZERE     | LAISSA  | F      | WEST     | RUBAVU    | RAMBURA  | JOMBA      | laissan7@gmail.com   | 0786557862 | NULL   |
+| 73234567 | UMWALI    | CELINE  | F      | WEST     | RUSIZI    | RWESERO  | TABA       | celine7@gmail.com    | 0796957862 | NULL   |
+| 83234567 | MUGISHA   | EUGENIE | F      | NORTH    | BURERA    | KIDAHO   | MUGU       | eugeniee7@gmail.com  | 0796900862 | NULL   |
+| 93234567 | ISHIMWE   | MERCI   | F      | KIGALI   | GASABO    | NYAMATA  | GATSATA    | merciee7@gmail.com   | 0796900062 | NULL   |
+| 10234567 | TUYIZERE  | JAMES   | M      | SOUTH    | NYANZA    | KABEZA   | BASE       | jamees7@gmail.com    | 0721900062 | NULL   |
++----------+-----------+---------+--------+----------+-----------+----------+------------+----------------------+------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set status='single' where gender='f';
+Query OK, 7 rows affected (0.00 sec)
+Rows matched: 7  Changed: 7  Warnings: 0
+
+mysql> update ngoma set status='married' where gender='m';
+Query OK, 3 rows affected (0.00 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> select *from ngoma;
++----------+-----------+---------+--------+----------+-----------+----------+------------+----------------------+------------+---------+
+| ID       | FNAME     | LNAME   | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL       | EMAIL                | TEL        | status  |
++----------+-----------+---------+--------+----------+-----------+----------+------------+----------------------+------------+---------+
+|  1234567 | UMWALI    | JUSTINE | F      | SOUTH    | HUYE      | KABEZA   | KIZUNGU    | umwalijustine37@gmai | 0799325151 | single  |
+|  2234567 | IRAKARAMA | GISELEE | F      | NORTH    | MUSANZE   | KINIGI   | RANGO      | iragizzo7@gmail.com  | 0780059152 | single  |
+| 33234567 | ROSE      | MARIE   | F      | WEST     | NYABIHU   | KABAYA   | KIMISAGARA | marierose7@gmail.com | 0780054552 | single  |
+| 43234567 | IRIHO     | JUSTIN  | M      | EAST     | NGOMA     | BYANGABO | KABEZA     | justin7@gmail.com    | 0780054562 | married |
+| 53234567 | IRAKOZE   | JOHNSON | M      | WEST     | RWAMAGANA | GASEKE   | TUMBAA     | johnson7@gmail.com   | 0780057862 | married |
+| 63234567 | IZERE     | LAISSA  | F      | WEST     | RUBAVU    | RAMBURA  | JOMBA      | laissan7@gmail.com   | 0786557862 | single  |
+| 73234567 | UMWALI    | CELINE  | F      | WEST     | RUSIZI    | RWESERO  | TABA       | celine7@gmail.com    | 0796957862 | single  |
+| 83234567 | MUGISHA   | EUGENIE | F      | NORTH    | BURERA    | KIDAHO   | MUGU       | eugeniee7@gmail.com  | 0796900862 | single  |
+| 93234567 | ISHIMWE   | MERCI   | F      | KIGALI   | GASABO    | NYAMATA  | GATSATA    | merciee7@gmail.com   | 0796900062 | single  |
+| 10234567 | TUYIZERE  | JAMES   | M      | SOUTH    | NYANZA    | KABEZA   | BASE       | jamees7@gmail.com    | 0721900062 | married |
++----------+-----------+---------+--------+----------+-----------+----------+------------+----------------------+------------+---------+
+10 rows in set (0.00 sec)
+
+mysql> alter table ngoma drop email;
+Query OK, 10 rows affected (0.02 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select *from ngoma;
++----------+-----------+---------+--------+----------+-----------+----------+------------+------------+---------+
+| ID       | FNAME     | LNAME   | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL       | TEL        | status  |
++----------+-----------+---------+--------+----------+-----------+----------+------------+------------+---------+
+|  1234567 | UMWALI    | JUSTINE | F      | SOUTH    | HUYE      | KABEZA   | KIZUNGU    | 0799325151 | single  |
+|  2234567 | IRAKARAMA | GISELEE | F      | NORTH    | MUSANZE   | KINIGI   | RANGO      | 0780059152 | single  |
+| 33234567 | ROSE      | MARIE   | F      | WEST     | NYABIHU   | KABAYA   | KIMISAGARA | 0780054552 | single  |
+| 43234567 | IRIHO     | JUSTIN  | M      | EAST     | NGOMA     | BYANGABO | KABEZA     | 0780054562 | married |
+| 53234567 | IRAKOZE   | JOHNSON | M      | WEST     | RWAMAGANA | GASEKE   | TUMBAA     | 0780057862 | married |
+| 63234567 | IZERE     | LAISSA  | F      | WEST     | RUBAVU    | RAMBURA  | JOMBA      | 0786557862 | single  |
+| 73234567 | UMWALI    | CELINE  | F      | WEST     | RUSIZI    | RWESERO  | TABA       | 0796957862 | single  |
+| 83234567 | MUGISHA   | EUGENIE | F      | NORTH    | BURERA    | KIDAHO   | MUGU       | 0796900862 | single  |
+| 93234567 | ISHIMWE   | MERCI   | F      | KIGALI   | GASABO    | NYAMATA  | GATSATA    | 0796900062 | single  |
+| 10234567 | TUYIZERE  | JAMES   | M      | SOUTH    | NYANZA    | KABEZA   | BASE       | 0721900062 | married |
++----------+-----------+---------+--------+----------+-----------+----------+------------+------------+---------+
+10 rows in set (0.00 sec)
+
+mysql> select *from ngoma where province='west';
++----------+---------+---------+--------+----------+-----------+---------+------------+------------+---------+
+| ID       | FNAME   | LNAME   | GENDER | PROVINCE | DISTRICT  | SECTOR  | CELL       | TEL        | status  |
++----------+---------+---------+--------+----------+-----------+---------+------------+------------+---------+
+| 33234567 | ROSE    | MARIE   | F      | WEST     | NYABIHU   | KABAYA  | KIMISAGARA | 0780054552 | single  |
+| 53234567 | IRAKOZE | JOHNSON | M      | WEST     | RWAMAGANA | GASEKE  | TUMBAA     | 0780057862 | married |
+| 63234567 | IZERE   | LAISSA  | F      | WEST     | RUBAVU    | RAMBURA | JOMBA      | 0786557862 | single  |
+| 73234567 | UMWALI  | CELINE  | F      | WEST     | RUSIZI    | RWESERO | TABA       | 0796957862 | single  |
++----------+---------+---------+--------+----------+-----------+---------+------------+------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> select *from where status='married'
+    -> select *from where status='married';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where status='married'
+select *from where status='married'' at line 1
+mysql> select *from ngoma where status='married';
++----------+----------+---------+--------+----------+-----------+----------+--------+------------+---------+
+| ID       | FNAME    | LNAME   | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL   | TEL        | status  |
++----------+----------+---------+--------+----------+-----------+----------+--------+------------+---------+
+| 43234567 | IRIHO    | JUSTIN  | M      | EAST     | NGOMA     | BYANGABO | KABEZA | 0780054562 | married |
+| 53234567 | IRAKOZE  | JOHNSON | M      | WEST     | RWAMAGANA | GASEKE   | TUMBAA | 0780057862 | married |
+| 10234567 | TUYIZERE | JAMES   | M      | SOUTH    | NYANZA    | KABEZA   | BASE   | 0721900062 | married |
++----------+----------+---------+--------+----------+-----------+----------+--------+------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from ngoma where province='west'and status='single';
++----------+--------+--------+--------+----------+----------+---------+------------+------------+--------+
+| ID       | FNAME  | LNAME  | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL       | TEL        | status |
++----------+--------+--------+--------+----------+----------+---------+------------+------------+--------+
+| 33234567 | ROSE   | MARIE  | F      | WEST     | NYABIHU  | KABAYA  | KIMISAGARA | 0780054552 | single |
+| 63234567 | IZERE  | LAISSA | F      | WEST     | RUBAVU   | RAMBURA | JOMBA      | 0786557862 | single |
+| 73234567 | UMWALI | CELINE | F      | WEST     | RUSIZI   | RWESERO | TABA       | 0796957862 | single |
++----------+--------+--------+--------+----------+----------+---------+------------+------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA WHERE PROVINCE='NORTH' OR STATUS='SINGLE';
++----------+-----------+---------+--------+----------+----------+---------+------------+------------+--------+
+| ID       | FNAME     | LNAME   | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL       | TEL        | status |
++----------+-----------+---------+--------+----------+----------+---------+------------+------------+--------+
+|  1234567 | UMWALI    | JUSTINE | F      | SOUTH    | HUYE     | KABEZA  | KIZUNGU    | 0799325151 | single |
+|  2234567 | IRAKARAMA | GISELEE | F      | NORTH    | MUSANZE  | KINIGI  | RANGO      | 0780059152 | single |
+| 33234567 | ROSE      | MARIE   | F      | WEST     | NYABIHU  | KABAYA  | KIMISAGARA | 0780054552 | single |
+| 63234567 | IZERE     | LAISSA  | F      | WEST     | RUBAVU   | RAMBURA | JOMBA      | 0786557862 | single |
+| 73234567 | UMWALI    | CELINE  | F      | WEST     | RUSIZI   | RWESERO | TABA       | 0796957862 | single |
+| 83234567 | MUGISHA   | EUGENIE | F      | NORTH    | BURERA   | KIDAHO  | MUGU       | 0796900862 | single |
+| 93234567 | ISHIMWE   | MERCI   | F      | KIGALI   | GASABO   | NYAMATA | GATSATA    | 0796900062 | single |
++----------+-----------+---------+--------+----------+----------+---------+------------+------------+--------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA;
++----------+-----------+---------+--------+----------+-----------+----------+------------+------------+---------+
+| ID       | FNAME     | LNAME   | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL       | TEL        | status  |
++----------+-----------+---------+--------+----------+-----------+----------+------------+------------+---------+
+|  1234567 | UMWALI    | JUSTINE | F      | SOUTH    | HUYE      | KABEZA   | KIZUNGU    | 0799325151 | single  |
+|  2234567 | IRAKARAMA | GISELEE | F      | NORTH    | MUSANZE   | KINIGI   | RANGO      | 0780059152 | single  |
+| 33234567 | ROSE      | MARIE   | F      | WEST     | NYABIHU   | KABAYA   | KIMISAGARA | 0780054552 | single  |
+| 43234567 | IRIHO     | JUSTIN  | M      | EAST     | NGOMA     | BYANGABO | KABEZA     | 0780054562 | married |
+| 53234567 | IRAKOZE   | JOHNSON | M      | WEST     | RWAMAGANA | GASEKE   | TUMBAA     | 0780057862 | married |
+| 63234567 | IZERE     | LAISSA  | F      | WEST     | RUBAVU    | RAMBURA  | JOMBA      | 0786557862 | single  |
+| 73234567 | UMWALI    | CELINE  | F      | WEST     | RUSIZI    | RWESERO  | TABA       | 0796957862 | single  |
+| 83234567 | MUGISHA   | EUGENIE | F      | NORTH    | BURERA    | KIDAHO   | MUGU       | 0796900862 | single  |
+| 93234567 | ISHIMWE   | MERCI   | F      | KIGALI   | GASABO    | NYAMATA  | GATSATA    | 0796900062 | single  |
+| 10234567 | TUYIZERE  | JAMES   | M      | SOUTH    | NYANZA    | KABEZA   | BASE       | 0721900062 | married |
++----------+-----------+---------+--------+----------+-----------+----------+------------+------------+---------+
+10 rows in set (0.01 sec)
+
+mysql>
+
+
+
